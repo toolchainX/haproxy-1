@@ -26,6 +26,6 @@ RUN buildDeps='curl gcc libc6-dev libpcre3-dev libssl-dev make' \
 	&& cp -R /usr/src/haproxy/examples/errorfiles /usr/local/etc/haproxy/errors \
 	&& rm -rf /usr/src/haproxy \
 	&& apt-get purge -y --auto-remove $buildDeps \
-        && apt-get update && apt-get install procps && apt-get install curl && apt-get install tcpdump
+        && apt-get update && apt-get install -y procps && apt-get install -y curl && apt-get install -y tcpdump
 
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
